@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: simrs-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: simrs_user
+      POSTGRES_PASSWORD: simrs_password
+      POSTGRES_DB: simrs_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U simrs_user -d simrs_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+    driver: local
