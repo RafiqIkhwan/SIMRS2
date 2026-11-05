@@ -32,10 +32,10 @@ cp .env.example .env
 Pastikan variabel di `.env` telah disesuaikan:
 ```env
 NODE_ENV=development
-PORT=5000
-DATABASE_URL="postgresql://simrs_user:simrs_password@localhost:5432/simrs_db?schema=public"
-SESSION_SECRET="super-secret-session-key-change-in-production-min-32-chars-long"
-FRONTEND_URL="http://localhost:5173"
+PORT=0000
+DATABASE_URL="..."
+SESSION_SECRET="..."
+FRONTEND_URL="..."
 ```
 
 ### 2. Jalankan PostgreSQL dengan Docker Compose
